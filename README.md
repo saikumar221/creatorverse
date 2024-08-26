@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='./creatorverse_walkthrough.mov' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+👉🏿<img src='./creatorverse_walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Notes
 
