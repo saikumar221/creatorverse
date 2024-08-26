@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom';
 
-function creatorCard({ id,name, url, description, imageURL }) {
-  console.log("CC")
+function CreatorCard({ id, name, url, description, imageURL }) {
   return (
-    <div className="card">
-    <Link to={`/view-creator/${id}`}>
-      <img src={imageURL} alt={`${name}'s avatar`} />
-      <h2>{name}</h2>
+    <Link to={`/view-creator/${id}`} >
+    <article className="card container">
+      <header>
+        <img src={imageURL} alt={`${name}'s avatar`} className="card-image" />
+        <h2>{name}</h2>
+      </header>
       <p>{description}</p>
-      <a href={url} target="_blank" rel="noopener noreferrer">Visit Page</a>
-      <Link to={`/edit/${id}`}>
-        <button>Edit</button>
-      </Link>
+      <div className="actions">
+        <a href={url} target="_blank" rel="noopener noreferrer" className="button">Visit Page</a>
+        <Link to={`/edit/${id}`} className="button">Edit</Link>
+      </div>
+    </article>
     </Link>
-  </div>
   );
-  }
-  
-  export default creatorCard;
+}
+
+export default CreatorCard;

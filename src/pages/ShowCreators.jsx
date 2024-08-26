@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../client';
-import Card from '../components/creatorCard.jsx';
+import CreatorCard from '../components/CreatorCard'; // Updated import
 import { Link } from 'react-router-dom';
 
 function ShowCreators() {
@@ -8,7 +8,6 @@ function ShowCreators() {
 
   useEffect(() => {
     const fetchCreators = async () => {
-      console.log("call")
       const { data, error } = await supabase
         .from('creators')
         .select('*');
@@ -22,29 +21,30 @@ function ShowCreators() {
 
     fetchCreators();
   }, []);
-  console.log("Hi")
+
   return (
-    <div>
-      {creators.length > 0 ? (
-        creators.map((creator) => (
-          <Card
-            key={creator.id}
-            id={creator.id}
-            name={creator.name}
-            url={creator.url}
-            description={creator.description}
-            imageURL={creator.imageURL}
-          />
-        ))
-      ) : (
-        <p>No content creators found.</p>
-      )}
-          <div>
-      <Link to="/add-creator">
-        <button>Add New Creator</button>
-      </Link>
-    </div>
-    </div>
+    <section className="container">
+      <h1>Content Creators</h1>
+      <div className="grid">
+        {creators.length > 0 ? (
+          creators.map((creator) => (
+            <CreatorCard
+              key={creator.id}
+              id={creator.id}
+              name={creator.name}
+              url={creator.url}
+              description={creator.description}
+              imageURL={creator.imageURL}
+            />
+          ))
+        ) : (
+          <p>No content creators found.</p>
+        )}
+      </div>
+      <div className="actions">
+        <Link to="/add-creator" className="button">Add New Creator</Link>
+      </div>
+    </section>
   );
 }
 

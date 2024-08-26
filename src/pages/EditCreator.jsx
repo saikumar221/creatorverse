@@ -73,10 +73,9 @@ function EditCreator() {
       .eq('id', id);
   
     if (error) {
-      console.error('Error deleting creator:', error);
+      console.error('Error adding creator:', error);
     } else {
-      console.log('Creator deleted successfully!');
-      // Optionally, redirect to the home page or a different page after deletion
+      navigate('/'); // Redirect back to the home page
     }
   };
   

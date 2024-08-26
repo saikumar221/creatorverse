@@ -3,6 +3,7 @@ import ShowCreators from './pages/ShowCreators.jsx';
 import ViewCreator from './pages/ViewCreator.jsx';
 import EditCreator from './pages/EditCreator.jsx';
 import AddCreator from './pages/AddCreator.jsx';
+import './App.css';
 
 function App() {
   console.log("App")
